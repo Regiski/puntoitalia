@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto Italia - Prodotti Alimentari Italiani di Qualità</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🇮🇹 Punto Italia</h1>
+                <p class="tagline">Sapori Autentici d'Italia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="prodotti.html">Prodotti</a></li>
+                    <li><a href="carrello.html">Carrello <span id="cart-count" class="badge">0</span></a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Benvenuti al Punto Italia</h2>
+            <p>Scopri i migliori prodotti alimentari italiani, selezionati con cura dalle regioni più autentiche d'Italia</p>
+            <a href="prodotti.html" class="btn-primary">Scopri i Prodotti</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>Le Nostre Categorie</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🍝</div>
+                    <h3>Pasta</h3>
+                    <p>Pasta artigianale di grano duro italiano</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🧀</div>
+                    <h3>Formaggi</h3>
+                    <p>Formaggi DOP e IGP da tutta Italia</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍷</div>
+                    <h3>Vini</h3>
+                    <p>Vini pregiati delle migliori cantine</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🫒</div>
+                    <h3>Olio d'Oliva</h3>
+                    <p>Olio extravergine di oliva biologico</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍅</div>
+                    <h3>Conserve</h3>
+                    <p>Salse e conserve artigianali</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🍪</div>
+                    <h3>Dolciumi</h3>
+                    <p>Biscotti e dolci tradizionali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2>Prodotti in Evidenza</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">🍝</div>
+                    <h3>Pasta Artigianale</h3>
+                    <p class="description">Penne rigate di grano duro 100% italiano</p>
+                    <p class="price">€3.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pasta Artigianale', 3.50)">Aggiungi al Carrello</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧀</div>
+                    <h3>Parmigiano Reggiano DOP</h3>
+                    <p class="description">24 mesi di stagionatura - 250g</p>
+                    <p class="price">€8.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Parmigiano Reggiano DOP', 8.90)">Aggiungi al Carrello</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🫒</div>
+                    <h3>Olio EVO Toscano</h3>
+                    <p class="description">Extravergine biologico - 500ml</p>
+                    <p class="price">€12.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Olio EVO Toscano', 12.50)">Aggiungi al Carrello</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🍅</div>
+                    <h3>Pomodoro San Marzano DOP</h3>
+                    <p class="description">Pelati in latta - 400g</p>
+                    <p class="price">€2.80</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pomodoro San Marzano DOP', 2.80)">Aggiungi al Carrello</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2>Perché Scegliere Punto Italia</h2>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">✓</div>
+                    <h3>Qualità Garantita</h3>
+                    <p>Selezioniamo solo prodotti certificati e di alta qualità</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>Spedizione Veloce</h3>
+                    <p>Consegna in 24-48 ore in tutta Italia</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Prodotti Autentici</h3>
+                    <p>Direttamente dai migliori produttori italiani</p>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">💳</div>
+                    <h3>Pagamenti Sicuri</h3>
+                    <p>Transazioni protette e sicure al 100%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Punto Italia</h3>
+                    <p>I migliori prodotti alimentari italiani, direttamente a casa tua.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prodotti.html">Prodotti</a></li>
+                        <li><a href="carrello.html">Carrello</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Email: info@puntoitalia.it</p>
+                    <p>Tel: +39 02 1234 5678</p>
+                    <p>Orari: Lun-Ven 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Punto Italia. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>

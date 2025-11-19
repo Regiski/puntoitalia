@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodotti - Punto Italia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🇮🇹 Punto Italia</h1>
+                <p class="tagline">Sapori Autentici d'Italia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="prodotti.html" class="active">Prodotti</a></li>
+                    <li><a href="carrello.html">Carrello <span id="cart-count" class="badge">0</span></a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>I Nostri Prodotti</h1>
+            <p>Scopri la nostra selezione di prodotti alimentari italiani di alta qualità</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterProducts('all')">Tutti</button>
+                <button class="filter-btn" onclick="filterProducts('pasta')">Pasta</button>
+                <button class="filter-btn" onclick="filterProducts('formaggi')">Formaggi</button>
+                <button class="filter-btn" onclick="filterProducts('vini')">Vini</button>
+                <button class="filter-btn" onclick="filterProducts('olio')">Olio</button>
+                <button class="filter-btn" onclick="filterProducts('conserve')">Conserve</button>
+                <button class="filter-btn" onclick="filterProducts('dolci')">Dolci</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Pasta -->
+                <div class="product-card" data-category="pasta">
+                    <div class="product-image">🍝</div>
+                    <h3>Pasta Artigianale Penne</h3>
+                    <p class="description">Penne rigate di grano duro 100% italiano - 500g</p>
+                    <p class="price">€3.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pasta Artigianale Penne', 3.50)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="pasta">
+                    <div class="product-image">🍝</div>
+                    <h3>Spaghetti di Gragnano IGP</h3>
+                    <p class="description">Spaghetti trafilati al bronzo - 500g</p>
+                    <p class="price">€4.20</p>
+                    <button class="btn-add-cart" onclick="addToCart('Spaghetti di Gragnano IGP', 4.20)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="pasta">
+                    <div class="product-image">🍝</div>
+                    <h3>Lasagne all'Uovo</h3>
+                    <p class="description">Sfoglia all'uovo artigianale - 250g</p>
+                    <p class="price">€3.80</p>
+                    <button class="btn-add-cart" onclick="addToCart('Lasagne all\'Uovo', 3.80)">Aggiungi al Carrello</button>
+                </div>
+
+                <!-- Formaggi -->
+                <div class="product-card" data-category="formaggi">
+                    <div class="product-image">🧀</div>
+                    <h3>Parmigiano Reggiano DOP</h3>
+                    <p class="description">24 mesi di stagionatura - 250g</p>
+                    <p class="price">€8.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Parmigiano Reggiano DOP', 8.90)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="formaggi">
+                    <div class="product-image">🧀</div>
+                    <h3>Mozzarella di Bufala DOP</h3>
+                    <p class="description">Campana autentica - 250g</p>
+                    <p class="price">€5.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Mozzarella di Bufala DOP', 5.50)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="formaggi">
+                    <div class="product-image">🧀</div>
+                    <h3>Pecorino Romano DOP</h3>
+                    <p class="description">Formaggio stagionato - 200g</p>
+                    <p class="price">€6.80</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pecorino Romano DOP', 6.80)">Aggiungi al Carrello</button>
+                </div>
+
+                <!-- Vini -->
+                <div class="product-card" data-category="vini">
+                    <div class="product-image">🍷</div>
+                    <h3>Chianti Classico DOCG</h3>
+                    <p class="description">Vino rosso toscano - 750ml</p>
+                    <p class="price">€15.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Chianti Classico DOCG', 15.90)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="vini">
+                    <div class="product-image">🍷</div>
+                    <h3>Prosecco DOC</h3>
+                    <p class="description">Spumante Extra Dry - 750ml</p>
+                    <p class="price">€9.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Prosecco DOC', 9.90)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="vini">
+                    <div class="product-image">🍷</div>
+                    <h3>Barolo DOCG</h3>
+                    <p class="description">Vino rosso piemontese - 750ml</p>
+                    <p class="price">€28.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Barolo DOCG', 28.50)">Aggiungi al Carrello</button>
+                </div>
+
+                <!-- Olio -->
+                <div class="product-card" data-category="olio">
+                    <div class="product-image">🫒</div>
+                    <h3>Olio EVO Toscano</h3>
+                    <p class="description">Extravergine biologico - 500ml</p>
+                    <p class="price">€12.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Olio EVO Toscano', 12.50)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="olio">
+                    <div class="product-image">🫒</div>
+                    <h3>Olio EVO Pugliese</h3>
+                    <p class="description">Cultivar Coratina - 750ml</p>
+                    <p class="price">€14.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Olio EVO Pugliese', 14.90)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="olio">
+                    <div class="product-image">🫒</div>
+                    <h3>Olio EVO Siciliano</h3>
+                    <p class="description">Cultivar Biancolilla - 500ml</p>
+                    <p class="price">€13.20</p>
+                    <button class="btn-add-cart" onclick="addToCart('Olio EVO Siciliano', 13.20)">Aggiungi al Carrello</button>
+                </div>
+
+                <!-- Conserve -->
+                <div class="product-card" data-category="conserve">
+                    <div class="product-image">🍅</div>
+                    <h3>Pomodoro San Marzano DOP</h3>
+                    <p class="description">Pelati in latta - 400g</p>
+                    <p class="price">€2.80</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pomodoro San Marzano DOP', 2.80)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="conserve">
+                    <div class="product-image">🍅</div>
+                    <h3>Passata di Pomodoro</h3>
+                    <p class="description">100% pomodoro italiano - 680g</p>
+                    <p class="price">€2.20</p>
+                    <button class="btn-add-cart" onclick="addToCart('Passata di Pomodoro', 2.20)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="conserve">
+                    <div class="product-image">🫙</div>
+                    <h3>Pesto Genovese</h3>
+                    <p class="description">Basilico DOP - 180g</p>
+                    <p class="price">€4.50</p>
+                    <button class="btn-add-cart" onclick="addToCart('Pesto Genovese', 4.50)">Aggiungi al Carrello</button>
+                </div>
+
+                <!-- Dolci -->
+                <div class="product-card" data-category="dolci">
+                    <div class="product-image">🍪</div>
+                    <h3>Amaretti di Saronno</h3>
+                    <p class="description">Biscotti alle mandorle - 200g</p>
+                    <p class="price">€5.80</p>
+                    <button class="btn-add-cart" onclick="addToCart('Amaretti di Saronno', 5.80)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="dolci">
+                    <div class="product-image">🍰</div>
+                    <h3>Panettone Artigianale</h3>
+                    <p class="description">Lievitazione naturale - 1kg</p>
+                    <p class="price">€18.90</p>
+                    <button class="btn-add-cart" onclick="addToCart('Panettone Artigianale', 18.90)">Aggiungi al Carrello</button>
+                </div>
+
+                <div class="product-card" data-category="dolci">
+                    <div class="product-image">🍪</div>
+                    <h3>Cantuccini Toscani</h3>
+                    <p class="description">Con mandorle intere - 250g</p>
+                    <p class="price">€6.20</p>
+                    <button class="btn-add-cart" onclick="addToCart('Cantuccini Toscani', 6.20)">Aggiungi al Carrello</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Punto Italia</h3>
+                    <p>I migliori prodotti alimentari italiani, direttamente a casa tua.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prodotti.html">Prodotti</a></li>
+                        <li><a href="carrello.html">Carrello</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Email: info@puntoitalia.it</p>
+                    <p>Tel: +39 02 1234 5678</p>
+                    <p>Orari: Lun-Ven 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Punto Italia. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter products
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

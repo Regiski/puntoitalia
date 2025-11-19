@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Punto Italia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🇮🇹 Punto Italia</h1>
+                <p class="tagline">Sapori Autentici d'Italia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="prodotti.html">Prodotti</a></li>
+                    <li><a href="carrello.html">Carrello <span id="cart-count" class="badge">0</span></a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contattaci</h1>
+            <p>Siamo qui per aiutarti! Inviaci un messaggio</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Inviaci un Messaggio</h2>
+                    <form id="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Oggetto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Seleziona un oggetto</option>
+                                <option value="info">Informazioni sui prodotti</option>
+                                <option value="ordine">Stato ordine</option>
+                                <option value="reclamo">Reclamo</option>
+                                <option value="collaborazione">Collaborazione</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Messaggio *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="privacy" required>
+                                Accetto la <a href="#">privacy policy</a> *
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Invia Messaggio</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Informazioni di Contatto</h2>
+
+                    <div class="info-block">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Indirizzo</h3>
+                            <p>Via Roma 123<br>20100 Milano, Italia</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@puntoitalia.it">info@puntoitalia.it</a></p>
+                            <p><a href="mailto:vendite@puntoitalia.it">vendite@puntoitalia.it</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Telefono</h3>
+                            <p><a href="tel:+390212345678">+39 02 1234 5678</a></p>
+                            <p><a href="tel:+393331234567">+39 333 123 4567</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-icon">🕐</div>
+                        <div class="info-content">
+                            <h3>Orari di Apertura</h3>
+                            <p>Lunedì - Venerdì: 9:00 - 18:00</p>
+                            <p>Sabato: 9:00 - 13:00</p>
+                            <p>Domenica: Chiuso</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h3>Seguici sui Social</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">Facebook</a>
+                            <a href="#" class="social-icon">Instagram</a>
+                            <a href="#" class="social-icon">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Domande Frequenti</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Come posso effettuare un ordine?</h3>
+                    <p>Naviga nel nostro catalogo, aggiungi i prodotti al carrello e procedi al checkout. Riceverai una conferma via email.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Quali sono i tempi di consegna?</h3>
+                    <p>Consegniamo in 24-48 ore in tutta Italia. Per ordini urgenti, contattaci per verificare la disponibilità.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Posso restituire un prodotto?</h3>
+                    <p>Sì, hai 14 giorni per restituire i prodotti non deperibili. Contattaci per iniziare il processo di reso.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Offrite spedizione gratuita?</h3>
+                    <p>Sì, la spedizione è gratuita per ordini superiori a €50. Per ordini inferiori, il costo è di €5.90.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Punto Italia</h3>
+                    <p>I migliori prodotti alimentari italiani, direttamente a casa tua.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prodotti.html">Prodotti</a></li>
+                        <li><a href="carrello.html">Carrello</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Email: info@puntoitalia.it</p>
+                    <p>Tel: +39 02 1234 5678</p>
+                    <p>Orari: Lun-Ven 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Punto Italia. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            // Simulate form submission
+            alert(`Grazie ${data.name}!\n\nIl tuo messaggio è stato inviato con successo.\nTi risponderemo all'indirizzo ${data.email} entro 24 ore.`);
+
+            // Reset form
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

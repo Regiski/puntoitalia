@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello - Punto Italia</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🇮🇹 Punto Italia</h1>
+                <p class="tagline">Sapori Autentici d'Italia</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="prodotti.html">Prodotti</a></li>
+                    <li><a href="carrello.html" class="active">Carrello <span id="cart-count" class="badge">0</span></a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Il Tuo Carrello</h1>
+            <p>Rivedi i tuoi prodotti prima di procedere all'acquisto</p>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-content">
+                <div class="cart-items">
+                    <div id="empty-cart" class="empty-cart">
+                        <div class="empty-cart-icon">🛒</div>
+                        <h3>Il tuo carrello è vuoto</h3>
+                        <p>Aggiungi prodotti deliziosi dal nostro catalogo!</p>
+                        <a href="prodotti.html" class="btn-primary">Vai ai Prodotti</a>
+                    </div>
+
+                    <div id="cart-items-list" class="cart-items-list" style="display: none;">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <div class="cart-summary" id="cart-summary" style="display: none;">
+                    <h2>Riepilogo Ordine</h2>
+                    <div class="summary-row">
+                        <span>Subtotale:</span>
+                        <span id="subtotal">€0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Spedizione:</span>
+                        <span id="shipping">€5.90</span>
+                    </div>
+                    <div class="summary-row">
+                        <span><small>Spedizione gratuita per ordini sopra €50</small></span>
+                    </div>
+                    <hr>
+                    <div class="summary-row total">
+                        <span><strong>Totale:</strong></span>
+                        <span id="total"><strong>€0.00</strong></span>
+                    </div>
+
+                    <button class="btn-checkout" onclick="checkout()">Procedi al Checkout</button>
+                    <a href="prodotti.html" class="btn-continue">Continua gli Acquisti</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Punto Italia</h3>
+                    <p>I migliori prodotti alimentari italiani, direttamente a casa tua.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="prodotti.html">Prodotti</a></li>
+                        <li><a href="carrello.html">Carrello</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Email: info@puntoitalia.it</p>
+                    <p>Tel: +39 02 1234 5678</p>
+                    <p>Orari: Lun-Ven 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Punto Italia. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+        // Display cart items on page load
+        window.addEventListener('DOMContentLoaded', displayCart);
+
+        function displayCart() {
+            const cart = getCart();
+            const emptyCart = document.getElementById('empty-cart');
+            const cartItemsList = document.getElementById('cart-items-list');
+            const cartSummary = document.getElementById('cart-summary');
+
+            if (cart.length === 0) {
+                emptyCart.style.display = 'block';
+                cartItemsList.style.display = 'none';
+                cartSummary.style.display = 'none';
+            } else {
+                emptyCart.style.display = 'none';
+                cartItemsList.style.display = 'block';
+                cartSummary.style.display = 'block';
+
+                // Display cart items
+                cartItemsList.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const cartItemDiv = document.createElement('div');
+                    cartItemDiv.className = 'cart-item';
+                    cartItemDiv.innerHTML = `
+                        <div class="cart-item-info">
+                            <h3>${item.name}</h3>
+                            <p class="price">€${item.price.toFixed(2)}</p>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <button onclick="updateQuantity(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQuantity(${index}, 1)">+</button>
+                            </div>
+                            <div class="item-total">
+                                <strong>€${(item.price * item.quantity).toFixed(2)}</strong>
+                            </div>
+                            <button class="btn-remove" onclick="removeFromCart(${index})">Rimuovi</button>
+                        </div>
+                    `;
+                    cartItemsList.appendChild(cartItemDiv);
+                });
+
+                // Calculate totals
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const shipping = subtotal >= 50 ? 0 : 5.90;
+                const total = subtotal + shipping;
+
+                document.getElementById('subtotal').textContent = `€${subtotal.toFixed(2)}`;
+                document.getElementById('shipping').textContent = shipping === 0 ? 'GRATUITA' : `€${shipping.toFixed(2)}`;
+                document.getElementById('total').textContent = `€${total.toFixed(2)}`;
+            }
+        }
+
+        function updateQuantity(index, change) {
+            const cart = getCart();
+            cart[index].quantity += change;
+
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+
+            saveCart(cart);
+            displayCart();
+            updateCartCount();
+        }
+
+        function checkout() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                alert('Il carrello è vuoto!');
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = total >= 50 ? 0 : 5.90;
+            const grandTotal = total + shipping;
+
+            alert(`Grazie per il tuo ordine!\n\nTotale: €${grandTotal.toFixed(2)}\n\nRiceverai una email di conferma a breve.`);
+
+            // Clear cart
+            localStorage.removeItem('cart');
+            displayCart();
+            updateCartCount();
+        }
+    </script>
+</body>
+</html>
